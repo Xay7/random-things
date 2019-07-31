@@ -7,8 +7,6 @@ const Nav = styled.nav`
   height: 52px;
 `;
 
-const Logo = styled.img``;
-
 const Navbar: React.FC = () => {
   return <Nav />;
 };
