@@ -53,4 +53,4 @@ const Search: React.FC<Props> = props => {
   );
 };
 
-export default Search;
+export default React.memo(Search);

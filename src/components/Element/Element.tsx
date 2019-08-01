@@ -1,18 +1,17 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 interface Props {
   name: string;
   icon: any;
-  color: string;
 }
 
 const Container = styled.div`
   height: 150px;
   width: 150px;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  border: 1px solid rebeccapurple;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -27,23 +26,25 @@ const Container = styled.div`
 `;
 
 const Icon = styled(FontAwesomeIcon)`
-  color: ${props => props.color};
+  color: rebeccapurple;
   margin-bottom: 20px;
   font-size: 45px;
 `;
 
 const Text = styled.h3`
-  color: ${props => props.color};
+  color: rebeccapurple;
   font-size: 18px;
   margin: 0;
 `;
 
 const Element: React.FC<Props> = props => {
   return (
-    <Container>
-      <Icon icon={props.icon} color={props.color} />
-      <Text color={props.color}>{props.name}</Text>
-    </Container>
+    <Link to={props.name.toLowerCase()} style={{ textDecoration: "none" }}>
+      <Container>
+        <Icon icon={props.icon} />
+        <Text>{props.name}</Text>
+      </Container>
+    </Link>
   );
 };
 

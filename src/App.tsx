@@ -15,7 +15,7 @@ const Number = lazy(() => import("./components/Elements/Number/Number"));
 
 const Container = styled.main`
   margin: 0 auto;
-  width: 65vw;
+  width: 960px;
   height: 100vh;
 `;
 

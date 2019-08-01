@@ -17,6 +17,6 @@ export const data: Array<{ name: string; category: string, icon: string }> = [
   {
     name: "Number",
     category: "Math",
-    icon: "infinity"
+    icon: "random"
   }
 ];

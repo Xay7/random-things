@@ -4,19 +4,13 @@ import Search from "../Search/Search";
 import { data } from "./data";
 import Element from "../Element/Element";
 
-const Container = styled.main`
-  margin: 0 auto;
-  width: 65vw;
-  height: 100vh;
-`;
-
-const ElementsContainer = styled.div`
+const ElementsContainer = styled.section`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 `;
 
-const Header = styled.div`
+const Header = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,34 +28,17 @@ const Main: React.FC = props => {
     return setElements(updatedElements);
   };
 
+  const elementsList = elements.map(el => {
+    return <Element name={el.name} icon={el.icon} key={el.name} />;
+  });
+
   return (
-    <Container>
+    <div>
       <Header>
         <Search onChange={handleChange} />
       </Header>
-      <ElementsContainer>
-        {elements.map(el => {
-          console.log(el.category);
-          let color: string = "black";
-          switch (el.category) {
-            case "Entertainment":
-              color = "#2980b9";
-              break;
-            case "Math":
-              color = "#e74c3c";
-              break;
-          }
-          return (
-            <Element
-              name={el.name}
-              icon={el.icon}
-              color={color}
-              key={el.name}
-            />
-          );
-        })}
-      </ElementsContainer>
-    </Container>
+      <ElementsContainer>{elementsList}</ElementsContainer>
+    </div>
   );
 };
 
