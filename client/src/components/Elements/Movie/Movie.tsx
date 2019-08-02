@@ -93,6 +93,8 @@ const Movie: React.FC = () => {
 
     const randomMovie = movies.data.results[randomNumber(1, movies.data.results.length)];
 
+    console.log(randomMovie);
+
     let getGenreNames = null;
 
     if (randomMovie.genre_ids.length > 0) {

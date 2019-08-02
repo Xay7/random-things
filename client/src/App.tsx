@@ -15,8 +15,8 @@ const Number = lazy(() => import("./components/Elements/Number/Number"));
 
 const Container = styled.main`
   margin: 0 auto;
-  width: 960px;
-  height: 100vh;
+  width: 1200px;
+  height: auto;
 `;
 
 const App: React.FC = () => {
